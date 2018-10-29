@@ -1,4 +1,10 @@
 # Multi Architecture Builds
 
-Run builds on multiple architectures on Shippable. Refer to branches of this
-repository for various combinations of the yml that can be used
+Run builds on multiple architectures on [Shippable](https://www.shippable.com/).
+
+## Scenarios
+
+- Using a single repository, run builds on following platforms
+    - x86_64, Ubuntu 16.04
+    - aarch64, Ubuntu 16.04
+    - aarch32, Ubuntu 16.04
