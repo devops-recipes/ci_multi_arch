@@ -1,14 +1,14 @@
-language: node_js
+language: go
 
 node_js:
-  - 10.12.0
-  - 11.0.0
+  - 1.11
+  - 1.9
 
 runtime:
   #- nodePool: default_node_pool
   - nodePool: dynamic__x86_64__CentOS_7__c4_large
-  - nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
-  - nodePool: shippable-shared-aarch32
+    #- nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
+    #- nodePool: shippable-shared-aarch32
 
   #- nodePool: default_node_pool
   #- nodePool: shippable_shared_aarch32
@@ -16,4 +16,5 @@ runtime:
 build:
   ci:
     - uname -a
-    - node --version
+    - go version
+    - go run main.go
