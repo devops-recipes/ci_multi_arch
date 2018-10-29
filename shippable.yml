@@ -1,9 +1,5 @@
 language: go
 
-go:
-  - 1.11
-  - 1.9
-
 matrix:
   include:
     - go: 1.11
@@ -18,5 +14,5 @@ build:
     - uname -a
     - go version
     - go get ./...
-    - go build -x -a -v ./...
-    - ./main
+    - go build -x -a -o main.out -v ./...
+    - ./main.out
