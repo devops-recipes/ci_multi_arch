@@ -4,9 +4,6 @@ go:
   - 1.11
   - 1.9
 
-env:
-  - GOOS=linux GOARCH=amd64
-
 matrix:
   include:
     - go: 1.11
@@ -16,14 +13,6 @@ matrix:
       env: GOOS=linux GOARCH=arm64
       nodePool: default-restricted
 
-#runtime:
-  #- nodePool: default_node_pool
-  #- nodePool: dynamic__x86_64__CentOS_7__c4_large
-    #- nodePool: shippable-shared-aarch32
-
-  #- nodePool: default_node_pool
-  #- nodePool: shippable_shared_aarch32
-  #- nodePool: shippable_shared_aarch64
 build:
   ci:
     - uname -a
