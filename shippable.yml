@@ -4,11 +4,21 @@ go:
   - 1.11
   - 1.9
 
-runtime:
+env:
+  - GOOS=linux GOARCH=amd64
+
+matrix:
+  include:
+    - go: 1.11
+      env: GOOS=linux GOARCH=amd64
+      nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
+    - go: 1.9
+      env: GOOS=linux GOARCH=arm64
+      nodePool: default-restricted
+
+#runtime:
   #- nodePool: default_node_pool
   #- nodePool: dynamic__x86_64__CentOS_7__c4_large
-  - nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
-  - nodePool: default-restricted
     #- nodePool: shippable-shared-aarch32
 
   #- nodePool: default_node_pool
@@ -18,4 +28,6 @@ build:
   ci:
     - uname -a
     - go version
-    - go run main.go
+    - go get ./...
+    - go build -x -a -v ./...
+    - ./main
