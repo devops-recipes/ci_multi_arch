@@ -1,8 +1,9 @@
 package main
 
 import "fmt"
-import "sys"
+import "runtime"
 
 func main() {
-	fmt.Println("Architecture: ", sys.GOARCH)
+	fmt.Println("Architecture: ", runtime.GOARCH)
+	fmt.Println("Operating system: ", runtime.GOOS)
 }
