@@ -8,6 +8,7 @@ runtime:
   #- nodePool: default_node_pool
   #- nodePool: dynamic__x86_64__CentOS_7__c4_large
   - nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
+  - nodePool: default-restricted
     #- nodePool: shippable-shared-aarch32
 
   #- nodePool: default_node_pool
