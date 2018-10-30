@@ -8,9 +8,6 @@ matrix:
     - node_js: 8.10.0
       env: NODE_ARCH=aarch64
       nodePool: shippable_shared_aarch64
-    - node_js: 9.8.4
-      env: NODE_ARCH=aarch62
-      nodePool: shippable_shared_aarch32
 
 build:
   ci:
