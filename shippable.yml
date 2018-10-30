@@ -14,3 +14,4 @@ build:
     - uname -a
     - node --version
     - echo $NODE_ARCH
+    - env
