@@ -13,5 +13,5 @@ build:
   ci:
     - uname -a
     - node --version
-    - echo $NODE_ARCH
-    - env
+    - echo $SHIPPABLE_NODE_ARCHITECTURE
+    - echo $SHIPPABLE_NODE_OPERATING_SYSTEM
