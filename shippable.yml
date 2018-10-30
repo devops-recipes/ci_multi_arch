@@ -4,10 +4,13 @@ matrix:
   include:
     - node_js: 10.12.0
       env: NODE_ARCH=x86_64
-      nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
+      nodePool: custom__x86_64__Ubuntu_16_04
     - node_js: 8.10.0
       env: NODE_ARCH=aarch64
-      nodePool: default-restricted
+      nodePool: shippable_shared_aarch64
+    - node_js: 9.11.0
+      env: NODE_ARCH=aarch62
+      nodePool: shippable_shared_aarch32
 
 build:
   ci:
