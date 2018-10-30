@@ -1,22 +1,16 @@
-language: go
+language: node_js
 
 matrix:
   include:
-    - go: 1.11
-      env: GOOS=linux GOARCH=amd64
+    - node_js: 10.12.0
+      env: NODE_ARCH=x86_64
       nodePool: dynamic__x86_64__Ubuntu_16_04__c4_large
-    - go: 1.9
-      env: GOOS=linux GOARCH=arm64
+    - node_js: 8.10.0
+      env: NODE_ARCH=aarch64
       nodePool: default-restricted
 
 build:
   ci:
     - uname -a
-    - go version
-    - go get ./...
-    - |
-        if [ "$GOARCH" == "arm4" ]; then
-          bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-        fi
-    - go build -x -a -o main.out -v ./...
-    - ./main.out
+    - node --version
+    - echo $NODE_ARCH
