@@ -14,5 +14,9 @@ build:
     - uname -a
     - go version
     - go get ./...
+    - |
+        if [ "$GOARCH" == "arm4" ]; then
+          bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+        fi
     - go build -x -a -o main.out -v ./...
     - ./main.out
